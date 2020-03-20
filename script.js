@@ -26,6 +26,22 @@ async function getRandomUser() {
   addData(newUser);
 }
 
+// Add new obj to data array
 function addData(obj) {
   data.push(obj);
+
+  updateDOM();
+}
+
+// Update DOM
+function updateDOM(providedData = data) { // the = means that if nothing is passed in the function then use data (data is the default value)
+  // Clear main div
+  main.innerHTML = '<h2><strong>Person</strong> Wealth</h2>';
+
+  providedData.forEach(item => {
+    const element = document.createElement('div');
+    element.classList.add('person');
+    element.innerHTML = `<strong>${item.name}</strong> ${item.wealth}`;
+    main.appendChild(element);
+  });
 }
