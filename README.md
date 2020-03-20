@@ -1,5 +1,5 @@
 # DOM Array Methods
-This project makes use of high order array methods (forEach, map, sort, filter, reduce)
+This project makes use of high order array methods (forEach, map, sort, filter, reduce).
 You can add a person, double their wealth, sort them by richest, filter out the non-millionaires, and calculate the total wealth.
 
 ## Screenshots
