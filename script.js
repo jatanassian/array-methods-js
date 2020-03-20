@@ -50,3 +50,6 @@ function updateDOM(providedData = data) { // the = means that if nothing is pass
 function formatMoney(number) {
   return '$' + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 }
+
+// Event listener
+addUserBtn.addEventListener('click', getRandomUser);
