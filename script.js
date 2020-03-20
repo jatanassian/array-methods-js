@@ -46,6 +46,20 @@ function doubleWealth() {
   updateDOM();
 }
 
+// Sort by richest
+function sortByRichest() {
+  data.sort((a, b) => b.wealth - a.wealth);
+
+  updateDOM();
+}
+
+// Filter only millionnaires
+function showMillionaires() {
+  data = data.filter(user => user.wealth > 1000000);
+
+  updateDOM();
+}
+
 // Update DOM
 function updateDOM(providedData = data) { // the = means that if nothing is passed in the function then use data (data is the default value)
   // Clear main div
@@ -67,3 +81,5 @@ function formatMoney(number) {
 // Event listener
 addUserBtn.addEventListener('click', getRandomUser);
 doubleBtn.addEventListener('click', doubleWealth);
+sortBtn.addEventListener('click', sortByRichest);
+showMillionairesBtn.addEventListener('click', showMillionaires);
