@@ -8,6 +8,7 @@ const calculateWealthBtn = document.getElementById('calculate-wealth');
 
 let data = [];
 
+// Initial users
 getRandomUser();
 getRandomUser();
 getRandomUser();
@@ -33,6 +34,18 @@ function addData(obj) {
   updateDOM();
 }
 
+// Double the wealth of everyone
+function doubleWealth() {
+  data = data.map(user => {
+    return { 
+      ...user,
+      wealth: user.wealth * 2
+    }
+  });
+
+  updateDOM();
+}
+
 // Update DOM
 function updateDOM(providedData = data) { // the = means that if nothing is passed in the function then use data (data is the default value)
   // Clear main div
@@ -53,3 +66,4 @@ function formatMoney(number) {
 
 // Event listener
 addUserBtn.addEventListener('click', getRandomUser);
+doubleBtn.addEventListener('click', doubleWealth);
